@@ -1,0 +1,38 @@
+.card {
+  padding-bottom: 20px;
+  margin: 20px;
+  width: 500px;
+  height: fit-content;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.data {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-weight: bold;
+}
+
+.data button {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#removebtn {
+  background-color: red;
+  color: white;
+}
+
+#addbtn {
+  background-color: rgb(84, 84, 246);
+  color: white;
+}

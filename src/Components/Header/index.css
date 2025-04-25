@@ -1,0 +1,163 @@
+.header {
+  background: white;
+  padding: 16px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo h1 {
+  color: #2874f0;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.search-container {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  overflow: hidden;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  width: 100%;
+}
+
+.search-container input::placeholder {
+  color: #6c757d;
+}
+
+.search-button {
+  padding: 12px 24px;
+  background: #2874f0;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background: #1c5ac0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.auth-link,
+.cart-link {
+  text-decoration: none;
+  color: #212529;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.auth-link:hover,
+.cart-link:hover {
+  color: #2874f0;
+}
+
+.auth-icon,
+.cart-icon {
+  font-size: 20px;
+}
+
+.cart-icon-container {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff3e6c;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 50%;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    gap: 16px;
+  }
+
+  .logo h1 {
+    font-size: 20px;
+  }
+
+  .search-container {
+    max-width: none;
+  }
+
+  .header-actions {
+    gap: 16px;
+  }
+
+  .auth-link span,
+  .cart-link span {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 12px 0;
+  }
+
+  .header-content {
+    padding: 0 12px;
+  }
+
+  .search-container input {
+    padding: 8px 12px;
+  }
+
+  .search-button {
+    padding: 8px 16px;
+  }
+}

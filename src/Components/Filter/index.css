@@ -1,0 +1,35 @@
+#filter {
+  margin-left: 10px;
+  width: 20%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgb(29, 40, 53);
+  color: white;
+  border-radius: 10px;
+}
+
+#filter h2 {
+  margin-top: 50px;
+  margin-left: 25%;
+}
+
+.filter {
+  margin: 10% 0 0 25%;
+  font-size: larger;
+}
+
+.filter input {
+  font-size: x-large;
+  margin-right: 20px;
+}
+
+#filter button {
+  margin: 20% 0 0 25%;
+  width: 50%;
+  height: 50px;
+  font-size: larger;
+  border-radius: 10px;
+  font-weight: bold;
+}
