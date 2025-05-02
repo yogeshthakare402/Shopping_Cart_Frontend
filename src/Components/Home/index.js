@@ -3,7 +3,6 @@ import "./index.css"
 import { CartState } from "../../Context/CartContext"
 import { FaShoppingCart, FaStar } from "react-icons/fa"
 import { Link } from "react-router-dom"
-import ProductCarousel from "../ProductCarousel"
 
 const categories = [
   { id: 1, name: "Mobile", icon: "🔥", link: "/mobile" },
@@ -25,8 +24,6 @@ function Home() {
 
   return (
     <div className="home-container">
-      <ProductCarousel />
-
       <section className="categories-section">
         <h2>Shop By Category</h2>
         <div className="categories-grid">

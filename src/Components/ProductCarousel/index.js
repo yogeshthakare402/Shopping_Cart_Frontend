@@ -15,42 +15,40 @@ const banners = [
     title: "SMART WEARABLE",
     subtitle: "Best Deal Online on smart watches",
     discount: "UP to 80% OFF",
-    image: "https://example.com/smart-watch.png", // Replace with actual image URL
-    backgroundColor: "#1a237e",
+    image: "https://pngimg.com/uploads/smartwatch/smartwatch_PNG101814.png",
+    backgroundColor: "#7986cb", // Light Indigo
   },
   {
     id: 2,
     title: "LATEST SMARTPHONES",
     subtitle: "New Arrivals with Amazing Deals",
     discount: "UP to 40% OFF",
-    image: "https://example.com/smartphone.png", // Replace with actual image URL
-    backgroundColor: "#004d40",
+    image: "https://pngimg.com/uploads/smartphone/smartphone_PNG101814.png",
+    backgroundColor: "#4db6ac", // Light Teal
   },
   {
     id: 3,
     title: "PREMIUM LAPTOPS",
     subtitle: "Work & Gaming Laptops",
     discount: "UP to 30% OFF",
-    image: "https://example.com/laptop.png", // Replace with actual image URL
-    backgroundColor: "#3e2723",
+    image: "https://pngimg.com/uploads/laptop/laptop_PNG101814.png",
+    backgroundColor: "#a1887f", // Light Brown
   },
-]
+];
+
+
+
 
 function ProductCarousel() {
   const {
     state: { products, cart },
     dispatch,
   } = CartState()
-
-  // Banner carousel state
   const [currentBanner, setCurrentBanner] = useState(0)
-
-  // Product carousel state
   const [currentProduct, setCurrentProduct] = useState(0)
   const carouselRef = useRef(null)
   const featuredProducts = products.filter((prod) => prod.inStock).slice(0, 8)
 
-  // Product carousel navigation
   const getVisibleProducts = () => {
     const width = window.innerWidth
     if (width >= 1200) return 4
@@ -107,7 +105,6 @@ function ProductCarousel() {
 
   return (
     <div className="carousel-container">
-      {/* Banner Carousel */}
       <div className="banner-carousel">
         <button className="banner-nav prev" onClick={prevBanner}>
           <FaChevronLeft />

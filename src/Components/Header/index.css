@@ -1,19 +1,15 @@
 .header {
-  background: white;
-  padding: 16px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.header-content {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
+  width: 100%;
+  padding: 16px;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  background: white;
   display: flex;
   align-items: center;
   gap: 24px;
+  margin: auto;
 }
 
 .logo {
@@ -122,8 +118,8 @@
 }
 
 @media (max-width: 768px) {
-  .header-content {
-    gap: 16px;
+  .header {
+   width: unset;
   }
 
   .logo h1 {
@@ -146,11 +142,8 @@
 
 @media (max-width: 480px) {
   .header {
-    padding: 12px 0;
-  }
-
-  .header-content {
-    padding: 0 12px;
+    padding: 12px;
+    width: unset;
   }
 
   .search-container input {

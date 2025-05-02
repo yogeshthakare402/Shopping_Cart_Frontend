@@ -20,7 +20,6 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="header-content">
         <Link to="/" className="logo">
           <h1>MegaMart</h1>
         </Link>
@@ -50,7 +49,6 @@ function Header() {
             <span>Cart</span>
           </Link>
         </div>
-      </div>
     </header>
   )
 }

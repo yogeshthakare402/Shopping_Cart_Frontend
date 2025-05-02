@@ -5,7 +5,7 @@ import Card from "../Common/Card"
 import Button from "../Common/Button"
 import Rating from "../Rating"
 import "./index.css"
-import { Link, useNavigate } from "react-router-dom"
+import {useNavigate } from "react-router-dom"
 import { CartState } from "../../Context/CartContext"
 
 function ProductCard({ product }) {
@@ -19,15 +19,13 @@ function ProductCard({ product }) {
     const quantity = cartItem ? cartItem.qty : 0
 
     const handleAddToCart = (e) => {
-        e.stopPropagation(); // Prevent card click when clicking the button
-        dispatch({
-            type: "ADD_TO_CART",
-            payload: product,
-        })
+      e.stopPropagation();
+      console.log("product", product)
+      dispatch({ type: "Add_To_Cart", payload: product })
     }
 
     const handleRemoveFromCart = (e) => {
-        e.stopPropagation(); // Prevent card click when clicking the button
+        e.stopPropagation();
         dispatch({
             type: "REMOVE_FROM_CART",
             payload: product,
@@ -35,7 +33,7 @@ function ProductCard({ product }) {
     }
 
     const handleQuantityChange = (e, action) => {
-        e.stopPropagation(); // Prevent card click when clicking quantity buttons
+        e.stopPropagation();
         if (action === "increase") {
             dispatch({
                 type: "CHANGE_CART_QTY",
@@ -59,7 +57,6 @@ function ProductCard({ product }) {
         navigate(`/product/${product.id}`);
     };
 
-    // Format price with 2 decimal places, ensuring it's a number first
     const formatPrice = (price) => {
         const numPrice = Number(price)
         return isNaN(numPrice) ? price : numPrice.toFixed(2)
@@ -69,7 +66,6 @@ function ProductCard({ product }) {
         <Card
             hoverable
             className="product-card"
-            onClick={handleCardClick}
             style={{ cursor: 'pointer' }}
         >
             <div className="product-image-container">
@@ -88,7 +84,7 @@ function ProductCard({ product }) {
                     {product.name}
                 </h3>
                 <div className="product-rating">
-                    <Rating rating={product.ratings} />
+                    <Rating rating={product.ratings} style={{display:"flex", alignItems:"center", gap:"4px"}}/>
                     <span className="rating-count">({product.ratings})</span>
                 </div>
 
@@ -123,7 +119,7 @@ function ProductCard({ product }) {
                         {product.inStock ? "Add to Cart" : "Out of Stock"}
                     </Button>
                 ) : (
-                    <div className="quantity-controls" onClick={e => e.stopPropagation()}>
+                    <div className="quantity-controls">
                         <button
                             className="quantity-button"
                             onClick={(e) => quantity === 1 ? handleRemoveFromCart(e) : handleQuantityChange(e, "decrease")}
